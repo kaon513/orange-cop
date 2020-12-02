@@ -1,0 +1,13 @@
+<svg id="humburger_close" xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 65 65">
+  <g id="楕円形_15" data-name="楕円形 15" fill="#fff" stroke="#e1724a" stroke-width="1">
+    <circle cx="32.5" cy="32.5" r="32.5" stroke="none"/>
+    <circle cx="32.5" cy="32.5" r="32" fill="none"/>
+  </g>
+  <g id="グループ_417" data-name="グループ 417" transform="translate(-1335 -34)">
+    <g id="グループ_416" data-name="グループ 416" transform="translate(-13 5)">
+      <rect id="長方形_1427" data-name="長方形 1427" width="6" height="6" transform="translate(1378 46)" fill="#e0715f"/>
+      <rect id="長方形_1428" data-name="長方形 1428" width="6" height="6" transform="translate(1378 58)" fill="#e0715f"/>
+      <rect id="長方形_1429" data-name="長方形 1429" width="6" height="6" transform="translate(1378 70)" fill="#e0715f"/>
+    </g>
+  </g>
+</svg>

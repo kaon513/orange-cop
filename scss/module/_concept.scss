@@ -1,0 +1,25 @@
+.concept {
+  text-align: left;
+  color: $main_color;
+  position: relative;
+
+  &::before {
+    content: "";
+    background-image: url("./../img/concept.png");
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 100%;
+  }
+
+  &-ttl {
+    text-align: right;
+  }
+
+  &-inner {
+    width: 50%;
+    margin-left: auto;
+  }
+}

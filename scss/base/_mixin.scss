@@ -1,0 +1,180 @@
+//sp
+@mixin max-screen($break-point) {
+  @media screen and (max-width: $break-point) {
+    @content;
+  }
+}
+
+//pc
+@mixin min-screen($break-point) {
+  @media screen and (min-width: $break-point) {
+    @content;
+  }
+}
+
+
+@mixin font_size_calc ($min_size_rem, $max_size_rem,$min_size_px, $max_size_px, $min_screen_width : 64rem, $max_screen_width: 128rem) {
+    $x: $min_screen_width / 100;
+    $x2: (100 * ($max_size_rem - $min_size_rem) / ($max_screen_width - $min_screen_width));
+
+    font-size: calc(#{$min_size_rem} + ((1vw - #{$x}) * #{$x2}));
+
+    @include max-screen($break_sp) {
+      font-size: $min_size_px;
+    }
+
+    @include min-screen($break_pc){
+        font-size: $max_size_px;
+    }
+}
+
+//font
+@mixin txt_font($margin_bottom:false) {
+  @include font_size_calc(1.6rem ,2.1rem, 16px, 21px);
+    line-height: 2.28;
+    font-family: $sub_font;
+    letter-spacing: 0.07em;
+    color: $txt_color;
+    text-align: left;
+    font-weight: bold;
+    @if $margin_bottom {
+      margin-bottom: 20px;
+    }
+}
+
+@mixin main_font($margin_bottom:false) {
+  @include font_size_calc(1.6rem ,2.1rem, 16px, 21px);
+
+    line-height: 1;
+    font-family: $main_font;
+    letter-spacing: 0.04em;
+    color: $txt_color;
+    text-align: left;
+    font-weight: bold;
+    @if $margin_bottom {
+      margin-bottom: 20px;
+    }
+}
+
+@mixin flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin padding_size_calc ($min_size_rem, $max_size_rem,$min_size_px, $max_size_px, $min_screen_width : 64rem, $max_screen_width: 128rem) {
+    $x: $min_screen_width / 100;
+    $x2: (100 * ($max_size_rem - $min_size_rem) / ($max_screen_width - $min_screen_width));
+
+    padding-left: calc(#{$min_size_rem} + ((1vw - #{$x}) * #{$x2}));
+    padding-right: calc(#{$min_size_rem} + ((1vw - #{$x}) * #{$x2}));
+
+    @include max-screen($break_sp) {
+      padding-left: $min_size_px;
+      padding-right: $min_size_px;
+    }
+
+    @include min-screen($break_pc){
+        padding-left: $max_size_px;
+        padding-right: $max_size_px;
+    }
+}
+
+@mixin size_calc($property, $min_size_rem, $max_size_rem,$min_size_px, $max_size_px, $min_screen_width : 64rem, $max_screen_width: 128rem){
+  $x: $min_screen_width / 100;
+  $x2: (100 * ($max_size_rem - $min_size_rem) / ($max_screen_width - $min_screen_width));
+
+  #{$property}: calc(#{$min_size_rem} + ((1vw - #{$x}) * #{$x2}));
+
+  @include max-screen($break_sp) {
+    #{$property}: $min_size_px;
+  }
+
+  @include min-screen($break_pc){
+      #{$property}: $max_size_px;
+  }
+}
+
+
+@mixin ttl{
+  font-family: $main_font;
+  font-size: 60px;
+  @include font_size_calc(3.2rem ,6rem, 32px, 60px);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  color: #FEE757;
+  @include max-screen($break_sp) {
+    font-size: 32px;
+  }
+  @include min-screen($break_pc) {
+    font-size: 60px;
+  }
+}
+
+@mixin txt($font_size: 21){
+  font-family: $sub_font;
+  color: $txt_color;
+
+  @if $font_size == 21{
+    font-size: 21px;
+    @include font_size_calc(1.6rem ,2.1rem, 16px, 21px);
+    letter-spacing: 0.12em;
+    line-height: 2.38;
+  }
+  @else if $font_size == 18{
+    font-size: 18px;
+    @include font_size_calc(1.6rem ,1.8rem, 16px, 18px);
+    letter-spacing: 0.07em;
+    line-height: 1.94;
+  }
+  @else if $font_size == 20{
+    font-size: 20px;
+    @include font_size_calc(1.6rem ,2rem, 16px, 20px);
+    letter-spacing: .07em;
+    line-height: 3;
+  }
+  @else if $font_size == 38{
+    font-size: 38px;
+    @include font_size_calc(1.6rem ,3.8rem, 16px, 38px);
+    letter-spacing: .04em;
+    line-height: 1.29;
+  }
+  @else if $font_size == 24{
+    font-size: 24px;
+    @include font_size_calc(1.8rem ,2.4rem, 18px, 24px);
+    letter-spacing: .04em;
+    line-height: 1.66;
+  }
+
+}
+
+@mixin hedaer_ttl{
+  // font-family: $sub_font;
+  font-family: $main_font;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.35;
+  letter-spacing: 0.126em;
+  color: $txt_color;
+  // color: $main_color;
+  //text-align: left;
+  margin-bottom: 48px;
+
+  @include max-screen($break_sp) {
+    font-size: 24px;
+    line-height: 1.33;
+    color: $txt_color;
+    // color: $main_color;
+    //text-align: left;
+    margin-bottom: 9.4%;
+    text-align: center;
+  }
+
+}
+
+@function division-line-height($numerator, $denominator) {
+  @return $numerator / $denominator;
+}
+
+@function division-width($numerator, $denominator) {
+  @return ($numerator / $denominator) * 100%;
+}

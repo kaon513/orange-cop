@@ -1,0 +1,10 @@
+.container {
+  max-width: $max_width;
+  padding-right: (160/1140)*100%;
+  padding-left: (160/1140)*100%;
+
+  @include max-screen($break_sp) {
+    padding-right: 160px;
+    padding-left: 160px;
+  }
+}

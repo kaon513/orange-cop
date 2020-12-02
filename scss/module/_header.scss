@@ -1,0 +1,40 @@
+.hamburger-wrapper{
+      cursor: pointer;
+      margin-right:  54px; //←％指定すると折り返す
+}
+
+.header {
+  &-wrapper {
+    // display: flex;
+  }
+
+  &-logo{
+    height: 35px;
+    margin-right: auto;
+    margin-left: 54px;
+  }
+
+  &-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 128px;
+    // width: 87.5%;
+    margin: 0 auto;
+
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 65px;
+    }
+
+    &-item {
+      margin-left: 54px; //←％指定すると折り返す
+      a{
+        text-decoration: none;
+        color:$main_color;
+      }
+    }
+  }
+}
