@@ -1,10 +1,23 @@
-.container {
-  max-width: $max_width;
-  padding-right: (160/1140)*100%;
-  padding-left: (160/1140)*100%;
+.passion{
+  &-inner{
+    display: flex;
+  }
+  &-content{
+    width: 50%;
 
-  @include max-screen($break_sp) {
-    padding-right: 160px;
-    padding-left: 160px;
+    a{
+      padding: 0px 90px 25px;
+      @include border_bottom(true);
+      color: $main_color;
+    }
+  }
+  &-img{
+    width: 50%;
+  }
+  &-ttl{
+@include ttl;
+  }
+  &-txt{
+    margin-bottom: 2em;
   }
 }

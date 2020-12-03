@@ -5,6 +5,42 @@ var gulp = require("gulp");
 //   done();
 // });
 try { fsevents = require('fsevents'); } catch (error) {}
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+
+var cleanCSS = require('gulp-clean-css');
+var rename   = require("gulp-rename");
+
+gulp.task('sass', function() {
+  // return gulp.src('./scss/**/*.scss')
+  return gulp.src('./scss/style.scss')
+    // .pipe(sass({outputStyle: 'expanded'}))
+    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('./css'));
+    // .pipe(gulp.dest('./css'));
+});
+
+gulp.task( 'watch', function() {
+  gulp.watch( './scss/**/*.scss', gulp.task( 'sass' ) );
+
+});
+
+var gulp = require('gulp');
+var gulp = require("gulp");
+var htmlbeautify = require("gulp-html-beautify");
+
+gulp.task('htmlbeautify', function(done) {
+  var options = {
+    indent_size: 2,
+    indent_with_tabs: true
+  };
+  gulp.src('./*.html')
+    .pipe(htmlbeautify(options))
+    // .pipe(gulp.dest('./dest'));
+    .pipe(gulp.dest('./'));
+  done();
+});
 
 // var browserSync  = require('browser-sync');
 //
@@ -48,7 +84,10 @@ const taskReload = (done) => {
 
 // Wacth
 const taskWatch = (done) => {
+ watch( './scss/**/*.scss', gulp.task( 'sass' ) );
+  // watch('./*.html', gulp.task( 'htmlbeautify' ) );
  watch('./**/*', taskReload);
+
  done();
 }
 
@@ -104,40 +143,4 @@ gulp.task( 'imagemin', function() {
     .src( './img/base/*.{png,jpg,gif,svg}' )
     .pipe( imagemin( imageminOption ) )
     .pipe( gulp.dest( './img' ) );
-});
-
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-
-var cleanCSS = require('gulp-clean-css');
-var rename   = require("gulp-rename");
-
-// gulp.task('mincss', function() {
-//   return gulp.src("css/*.css")
-//     .pipe(cleanCSS())
-//     .pipe(rename({ suffix: '.min' }))
-//     .pipe(gulp.dest('css/'));
-// });
-
-gulp.task('sass', function() {
-  // return gulp.src('./scss/**/*.scss')
-  return gulp.src('./scss/style.scss')
-    // .pipe(sass({outputStyle: 'expanded'}))
-    .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('./css'));
-    // .pipe(gulp.dest('./css'));
-});
-
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-
-// gulp.task('sass', function() {
-//   return gulp.src('./scss/**/*.scss')
-//     .pipe(sass({outputStyle: 'expanded'}))
-//     .pipe(gulp.dest('./css'));
-// });
-
-gulp.task( 'watch', function() {
-  gulp.watch( './scss/**/*.scss', gulp.task( 'sass' ) );
 });

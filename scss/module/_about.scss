@@ -1,10 +1,33 @@
-.container {
-  max-width: $max_width;
-  padding-right: (160/1140)*100%;
-  padding-left: (160/1140)*100%;
+.about {
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  $wrap_width: 1440 - 320;
+  $this_width: 32 / #{$wrap_width};
+  $this_magin_left: #{$this_width} * 100%;
+  // #{$this_magin_left}
+  &-item {
+    a {
+      color: $main_color;
+    }
+    width: 31%;
+    margin-left: 2.8%;
+    @include border_bottom;
 
-  @include max-screen($break_sp) {
-    padding-right: 160px;
-    padding-left: 160px;
+    &:first-child {
+      flex: 1;
+      margin-left: 0;
+    }
+
+    &-txt {
+      font-size: 16px;
+      font-weight: 600;
+      // line-height: (85 / 16);
+      p+p {
+        font-weight: 400;
+      }
+    }
   }
 }

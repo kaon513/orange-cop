@@ -3,13 +3,12 @@
 .menu {
   display: none;
   position: fixed;
+  z-index: 1;
   top: 0;
   right: 0;
   width: 100vw;
   background-color: $main_color;
   padding-bottom: 109px;
-
-
 
   &-header {
     display: flex;
@@ -60,7 +59,7 @@
         cursor: pointer;
 
         a {
-          color: $txt_color;
+          color: #111111;
           position: absolute;
           top: 50%;
           left: 50%;

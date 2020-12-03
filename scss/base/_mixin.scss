@@ -96,17 +96,17 @@
 
 
 @mixin ttl{
-  font-family: $main_font;
-  font-size: 60px;
-  @include font_size_calc(3.2rem ,6rem, 32px, 60px);
-  letter-spacing: 0.04em;
-  line-height: 1.2;
-  color: #FEE757;
+  font-family: $ttl_font;
+  font-size: 54px;
+  @include font_size_calc(3.2rem ,5.4rem, 32px, 54px);
+  letter-spacing: (60/1000)em;
+  line-height: 54/60;
+  color: $main_color;
   @include max-screen($break_sp) {
     font-size: 32px;
   }
   @include min-screen($break_pc) {
-    font-size: 60px;
+    font-size: 54px;
   }
 }
 
@@ -177,4 +177,28 @@
 
 @function division-width($numerator, $denominator) {
   @return ($numerator / $denominator) * 100%;
+}
+
+@mixin border_bottom($arrow:false){
+border-bottom: 1px solid $main_color;
+position: relative;
+@if($arrow){
+  &::before{
+    content:"";
+    background-image: url(../../img/arrow.svg);
+    // width:100%;
+    // height: 100%;
+    position: absolute;
+    right:0;
+    // top:50%;
+    top:0;
+    // transform: translateX(90%);
+    // transform: translateY(-50%);
+    display: inline-block;/*忘れずに！*/
+    width: 11px;/*画像の幅*/
+    height: 11px;/*画像の高さ*/
+    background-size: contain;
+    vertical-align: middle;
+  }
+}
 }

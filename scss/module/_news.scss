@@ -1,10 +1,79 @@
-.container {
-  max-width: $max_width;
-  padding-right: (160/1140)*100%;
-  padding-left: (160/1140)*100%;
+.news {
+  background-image: url("../../img/news.png");
 
-  @include max-screen($break_sp) {
-    padding-right: 160px;
-    padding-left: 160px;
+  &-inner {
+    padding-top: 490px;
+  }
+  //
+  &-content {
+    background-color: #fff;
+    padding: 96px;
+
+    &-header {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+    }
+
+    &-list {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+    }
+
+    &-item {
+      margin-left: 37px;
+
+      &:last-child {
+        &::after {
+          content: '';
+          background-image: url("../../img/news-detail.svg");
+          display: inline-block;
+          /*忘れずに！*/
+          width: 8px;
+          /*画像の幅*/
+          height: 15px;
+          /*画像の高さ*/
+          background-size: contain;
+          vertical-align: middle;
+          margin-left: 21px;
+        }
+      }
+
+      a {
+        @include border-bottom;
+        color: $main_color;
+      }
+    }
+
+    &-tbl {}
+  }
+
+  &-tr {
+    position: relative;
+    vertical-align: baseline;
+
+    &:after {
+      content: "";
+      background-image: url("../../img/arrow.svg");
+      display: inline-block;
+      /*忘れずに！*/
+      width: 8px;
+      /*画像の幅*/
+      height: 15px;
+      /*画像の高さ*/
+      background-size: contain;
+      vertical-align: middle;
+    }
+  }
+
+  &-link {
+    text-align: center;
+
+    a {
+      padding: 0 200px 25px;
+      @include border-bottom(true);
+      color: $main_color;
+    }
   }
 }
