@@ -25,7 +25,7 @@
 @mixin txt_font($margin_bottom:false) {
   @include font_size_calc(1.6rem ,2.1rem, 16px, 21px);
   line-height: 2.28;
-  font-family: $sub_font;
+  font-family: $ja_font;
   letter-spacing: 0.07em;
   color: $txt_color;
   text-align: left;
@@ -76,7 +76,7 @@
   }
 }
 @mixin ttl {
-  font-family: $ttl_font;
+  font-family: $main_font;
   font-size: 54px;
   @include font_size_calc(3.2rem ,5.4rem, 32px, 54px);
   letter-spacing: (60/1000)em;

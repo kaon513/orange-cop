@@ -4,19 +4,33 @@
   background-color: #fff;
   padding-bottom: 200px;
 
+  &-ttl {
+    font-family: $main_font;
+    // font-family: $ja_font;
+    // $this_font_size:36;
+    $this_font_size: 54;
+    font-size: #{$this_font_size}px;
+    font-weight: 400;
+    letter-spacing: #{(60/1000)}em;
+    line-height: (60/#{$this_font_size});
+    color: $main_color;
+    // color: $accent_color;
+    @include max-screen($break_sp) {
+      font-size: 24px;
+    }
+  }
+
   &-list {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
   }
+
   $wrap_width: 1440 - 320;
   $this_width: 32 / #{$wrap_width};
   $this_magin_left: #{$this_width} * 100%;
   // #{$this_magin_left}
   &-item {
-    a {
-      color: $main_color;
-    }
     width: 31%;
     margin-left: 2.8%;
     // @include border_bottom;
@@ -27,13 +41,56 @@
       margin-left: 0;
     }
 
+    &-ttl {
+      font-family: $main_font;
+      // font-family: $ja_font;
+      // $this_font_size:16;
+      $this_font_size: 36;
+      font-size: #{$this_font_size}px;
+      font-weight: 400;
+      letter-spacing: #{(60/1000)}em;
+      // line-height: (60/#{$this_font_size});
+      line-height: 1.5;
+      color: $main_color;
+      // color: $accent_color;
+      //@include max-screen($break_sp) {
+      //  font-size: 16px;
+      //}
+    }
+
     &-txt {
-      font-size: 16px;
-      font-weight: 600;
+      margin-bottom: 2em;
+      // font-family: $main_font;
+      font-family: $ja_font;
+      $this_font_size: 16;
+      // $this_font_size:20;
+      font-size: #{$this_font_size}px;
+      font-weight: 500;
+      letter-spacing: 0;
+      // line-height: (85/#{$this_font_size});
+      color: $main_color;
+      // color: $accent_color;
+      //@include max-screen($break_sp) {
+      //  font-size: 16px;
+      //}
+      // font-size: 16px;
+      // font-weight: 600;
       // line-height: (85 / 16);
-      p+p {
-        font-weight: 400;
-      }
+    }
+
+    &-comment {
+      font-family: $ja_font;
+      $this_font_size: 16;
+      // $this_font_size:20;
+      font-size: #{$this_font_size}px;
+      font-weight: 400;
+        letter-spacing: #{(60/1000)}em;
+        line-height: (24/#{$this_font_size});
+      color: $main_color;
+    }
+
+    a {
+      color: $main_color;
     }
   }
 }

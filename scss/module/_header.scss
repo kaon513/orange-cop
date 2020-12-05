@@ -13,6 +13,7 @@
   width:  100%;
   height: 128px;
   margin: 0 auto;
+  background-color: $accent_color;
 
   &-logo {
     height: 35px;
@@ -32,6 +33,20 @@
 
     &-item {
       margin-left: 54px; //←％指定すると折り返す
+      font-family: $main_font;
+      // font-family: $ja_font;
+      $this_font_size:16;
+      // $this_font_size:20;
+      font-size: #{$this_font_size}px;
+      font-weight: 400;
+      letter-spacing: #{(60/1000)}em;
+      line-height: (20/#{$this_font_size});
+      color: $main_color;
+      // color: $accent_color;
+      //@include max-screen($break_sp) {
+      //  font-size: 16px;
+      //}
+
 
       a {
         @include underline(true);

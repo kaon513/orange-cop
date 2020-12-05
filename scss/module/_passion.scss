@@ -10,6 +10,20 @@
 
     a{
       padding: 0px 90px 25px;
+      font-family: $main_font;
+      // font-family: $ja_font;
+      // $this_font_size:16;
+      $this_font_size:20;
+      font-size: #{$this_font_size}px;
+      font-weight: 400;
+      letter-spacing: #{(60/1000)}em;
+      line-height: (27/#{$this_font_size});
+      color: $main_color;
+      // color: $accent_color;
+      //@include max-screen($break_sp) {
+      //  font-size: 16px;
+      //}
+
 @include underline(true, true);
     }
   }
@@ -18,9 +32,38 @@
     width: 50%;
   }
   &-ttl{
-@include ttl;
+    font-family: $main_font;
+    // font-family: $ja_font;
+    // $this_font_size:36;
+    $this_font_size:54;
+    font-size: #{$this_font_size}px;
+    font-weight: 400;
+    letter-spacing: #{(60/1000)}em;
+    line-height: (60/#{$this_font_size});
+    color: $main_color;
+    // color: $accent_color;
+    @include max-screen($break_sp) {
+      font-size: 36px;
+    }
+
   }
   &-txt{
     margin-bottom: 2em;
+
+      // font-family: $main_font;
+      font-family: $ja_font;
+      $this_font_size:16;
+      // $this_font_size:20;
+      font-size: #{$this_font_size}px;
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: (32/#{$this_font_size});
+      color: $main_color;
+      // color: $accent_color;
+      //@include max-screen($break_sp) {
+      //  font-size: 16px;
+      //}
+
+
   }
 }

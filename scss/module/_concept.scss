@@ -16,6 +16,57 @@
 
   &-ttl {
     text-align: right;
+
+    font-family: $main_font;
+    // font-family: $ja_font;
+    $this_font_size:124;
+    // $this_font_size:54;
+    font-size: #{$this_font_size}px;
+    font-weight: 400;
+    letter-spacing: #{(60/1000)}em;
+    // line-height: (60/#{$this_font_size});
+    color: $main_color;
+    // color: $accent_color;
+    @include max-screen($break_sp) {
+      font-size: 64px;
+    }
+
+  }
+
+  &-subttl{
+    margin-bottom: 1em;
+
+    font-family: $main_font;
+    // font-family: $ja_font;
+    // $this_font_size:16;
+    $this_font_size:24;
+    font-size: #{$this_font_size}px;
+    font-weight: 400;
+    letter-spacing: #{(60/1000)}em;
+    line-height: (36/#{$this_font_size});
+    color: $main_color;
+    // color: $accent_color;
+    //@include max-screen($break_sp) {
+    //  font-size: 16px;
+    //}
+
+  }
+
+  &-txt{
+    // font-family: $main_font;
+    font-family: $ja_font;
+    $this_font_size:16;
+    // $this_font_size:20;
+    font-size: #{$this_font_size}px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: (32/#{$this_font_size});
+    color: $main_color;
+    // color: $accent_color;
+    //@include max-screen($break_sp) {
+    //  font-size: 16px;
+    //}
+
   }
 
   &-inner {

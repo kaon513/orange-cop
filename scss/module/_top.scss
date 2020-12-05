@@ -8,9 +8,40 @@
     padding-bottom: 272px;
   }
 
-  &-ttl {}
+  &-ttl {
+    padding-bottom: 1em;
+font-family: $main_font;
+// font-family: $ja_font;
+$this_font_size:64;
+font-size: #{$this_font_size}px;
+// font-size: 54px;
+  font-weight: 400;
+letter-spacing: #{(60/1000)}em;
+line-height: (72/#{$this_font_size});
+color: $main_color;
+// color: $accent_color;
+@include max-screen($break_sp) {
+  font-size: 32px;
+}
 
-  &-txt {}
+  }
+
+  &-txt {
+    // font-family: $main_font;
+    font-family: $ja_font;
+    // $this_font_size:16;
+    $this_font_size:20;
+    font-size: #{$this_font_size}px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: (32/#{$this_font_size});
+    color: $main_color;
+    // color: $accent_color;
+    //@include max-screen($break_sp) {
+    //  font-size: 16px;
+    //}
+
+  }
 
   &-news {
     position: absolute;
@@ -32,8 +63,42 @@
       justify-content: center;
       align-items: center;
 
+      &-txt{
+        // font-family: $main_font;
+        font-family: $ja_font;
+        $this_font_size:14;
+        // $this_font_size:20;
+        font-size: #{$this_font_size}px;
+        font-weight: 400;
+        letter-spacing: #{(40/1000)}em;
+        line-height: (24/#{$this_font_size});
+        color: $main_color;
+        // color: $accent_color;
+        //@include max-screen($break_sp) {
+        //  font-size: 16px;
+        //}
+
+      }
+
       &-content {
         padding: 16px 19px;
+
+        time{
+          font-family: $main_font;
+          // font-family: $ja_font;
+          $this_font_size:12;
+          // $this_font_size:20;
+          font-size: #{$this_font_size}px;
+          font-weight: 400;
+          letter-spacing: #{(60/1000)}em;
+          line-height: (60/#{$this_font_size});
+          color: $main_color;
+          // color: $accent_color;
+          //@include max-screen($break_sp) {
+          //  font-size: 16px;
+          //}
+
+        }
       }
     }
 

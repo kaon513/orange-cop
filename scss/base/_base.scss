@@ -44,7 +44,7 @@ a{
   padding: 25px 105px;
   // font-size: 16px;
   line-height: 1;
-  font-family: $sub_font;
+  font-family: $main_font;
   // font-family: $main_font;
   font-size: 16px;
   font-weight: bold;
@@ -107,14 +107,6 @@ a{
 }
 
 // @import url('https://fonts.googleapis.com/css?family=Lato');
-.hero {
-  padding: 150px 0;
-  background: linear-gradient(45deg, #ae1a31 0%,#db6b2a 99%);
-  &__text {
-    margin: 0 auto;
-    max-width: 600px;
-  }
-}
 
 .text-reveal {
   // font-family: 'Lato', sans-serif;
