@@ -1,21 +1,13 @@
 .concept {
   text-align: left;
   color: $main_color;
-  position: relative;
+  padding: 173px 0 155px;
 
-  &::before {
-    content: "";
-    background-image: url("./../img/concept.png");
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height:100%;
-    width: 100%;
-  }
 
   &-ttl {
+    position: relative;
     text-align: right;
+    margin-bottom: .5em;
 
     font-family: $main_font;
     // font-family: $ja_font;
@@ -25,12 +17,23 @@
     font-weight: 400;
     letter-spacing: #{(60/1000)}em;
     // line-height: (60/#{$this_font_size});
+    line-height: 1;
     color: $main_color;
     // color: $accent_color;
     @include max-screen($break_sp) {
       font-size: 64px;
     }
 
+    &::before {
+      content: "";
+      background-image: url(./../img/concept.png);
+      position: absolute;
+      top: 0;
+      right: 50%;
+      transform: translateX(-103px);
+      height: 379px;
+      width: 352px;
+    }
   }
 
   &-subttl{
