@@ -1,26 +1,27 @@
-.hamburger-wrapper{
-      cursor: pointer;
-      margin-right:  54px; //←％指定すると折り返す
+.hamburger-wrapper {
+  cursor: pointer;
+  margin-right: 54px; //←％指定すると折り返す
 }
 
 .header {
-  &-wrapper {
-    // display: flex;
-  }
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  justify-content: space-between;
+  width:  100%;
+  height: 128px;
+  margin: 0 auto;
 
-  &-logo{
+  &-logo {
     height: 35px;
     margin-right: auto;
     margin-left: 54px;
   }
 
   &-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 128px;
     // width: 87.5%;
-    margin: 0 auto;
 
     &-list {
       display: flex;
@@ -31,9 +32,33 @@
 
     &-item {
       margin-left: 54px; //←％指定すると折り返す
-      a{
-        text-decoration: none;
-        color:$main_color;
+
+      a {
+        @include underline(true);
+        // text-decoration: none;
+        // color: $main_color;
+          // position: relative;
+
+        // &::before {
+        //   content: '';
+        //   position: absolute;
+        //   display: inline-block;
+        //   bottom: 0;
+        //   right: 0;
+        //   left: auto;
+        //   height: 2px;
+        //   width: 0;
+        //   background: $main_color;
+        //   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+        // }
+        // &:hover {
+        //   color: #d97568;
+        //   &::before {
+        //   width: 100%;
+        //       left: 0;
+        //   }
+        // }
+
       }
     }
   }

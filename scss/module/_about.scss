@@ -1,4 +1,9 @@
 .about {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  padding-bottom: 200px;
+
   &-list {
     display: flex;
     justify-content: space-between;
@@ -14,7 +19,8 @@
     }
     width: 31%;
     margin-left: 2.8%;
-    @include border_bottom;
+    // @include border_bottom;
+    @include underline;
 
     &:first-child {
       flex: 1;

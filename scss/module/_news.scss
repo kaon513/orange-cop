@@ -1,5 +1,6 @@
 .news {
-  background-image: url("../../img/news.png");
+  // background-image: url("../../img/news.png");
+margin-top: -600px;
 
   &-inner {
     padding-top: 490px;
@@ -8,6 +9,7 @@
   &-content {
     background-color: #fff;
     padding: 96px;
+    position: relative;
 
     &-header {
       display: -webkit-flex;
@@ -23,6 +25,8 @@
 
     &-item {
       margin-left: 37px;
+        // @include underline;
+        @include underline(true, false);
 
       &:last-child {
         &::after {
@@ -40,10 +44,11 @@
         }
       }
 
-      a {
-        @include border-bottom;
-        color: $main_color;
-      }
+      // a {
+      //   // @include border-bottom;
+      //     @include underline(true, false);
+      //   // color: $main_color;
+      // }
     }
 
     &-tbl {}
@@ -72,8 +77,43 @@
 
     a {
       padding: 0 200px 25px;
-      @include border-bottom(true);
-      color: $main_color;
+      // @include border-bottom(true);
+      @include underline(true, true);
+      // color: $main_color;
     }
   }
+}
+
+.tab-group{
+  display: flex;
+  justify-content: center;
+}
+.tab{
+  flex-grow: 1;
+  // padding:5px;
+  // list-style:none;
+  // border:solid 1px #CCC;
+  // text-align:center;
+  cursor:pointer;
+}
+.panel-group{
+  // height:100px;
+  padding-bottom: 100px;
+  border:solid 1px #CCC;
+  border-top:none;
+  background:#eee;
+}
+.panel{
+  display:none;
+}
+.tab.is-active{
+  // background:#F00;
+  // color:#FFF;
+@include underline();
+// background-color: $main_color;
+// color:#fff;
+  transition: all 0.2s ease-out;
+}
+.panel.is-show{
+  display:block;
 }

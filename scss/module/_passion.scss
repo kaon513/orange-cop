@@ -1,4 +1,7 @@
 .passion{
+
+    padding-bottom: 100px;
+
   &-inner{
     display: flex;
   }
@@ -7,11 +10,11 @@
 
     a{
       padding: 0px 90px 25px;
-      @include border_bottom(true);
-      color: $main_color;
+@include underline(true, true);
     }
   }
   &-img{
+    // position: absolute;
     width: 50%;
   }
   &-ttl{

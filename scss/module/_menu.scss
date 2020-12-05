@@ -1,14 +1,18 @@
 
 
 .menu {
-  display: none;
+  // display: none;
   position: fixed;
   z-index: 1;
   top: 0;
-  right: 0;
-  width: 100vw;
+  left: 0;
+  // width: 100vw;
   background-color: $main_color;
   padding-bottom: 109px;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0;
+  width: 0%;
+
 
   &-header {
     display: flex;
@@ -28,6 +32,7 @@
       justify-content: center;
       align-items: center;
       padding: 0 80px;
+      height: 100%;
     }
 
     &-ttl {
@@ -45,6 +50,13 @@
       position: relative;
       width: (262/832)*100%;
 
+      a{
+        @include underline(true);
+        // &::before {
+        //   background: $sub_color;
+        // }
+      }
+
       &-txt {
         display: inline-block;
         background-color: rgba($accent_color, .95);
@@ -59,7 +71,7 @@
         cursor: pointer;
 
         a {
-          color: #111111;
+          color: $sub_color;
           position: absolute;
           top: 50%;
           left: 50%;
@@ -73,13 +85,21 @@
     margin-left: auto;
     text-align: right;
     padding: 0 40px;
+  }
 
-    a {
+  &-item{
+    a{
+      @include underline(true);
       color: $accent_color;
+      &::before {
+        background: $accent_color;
+      }
     }
   }
 }
 
 .active {
-  display: block;
+  // display: block;
+  opacity: 1;
+  width: 100%;
 }
