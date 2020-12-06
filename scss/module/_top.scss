@@ -3,34 +3,31 @@
   position: relative;
   padding-top: (222/1440)*100%;
   padding-bottom: (272/1440)*100%;
-  @include max-screen($break_sp) {
+
+  @include min-screen($break_pc) {
     padding-top: 222px;
     padding-bottom: 272px;
   }
 
   &-ttl {
     padding-bottom: 1em;
-font-family: $main_font;
-// font-family: $ja_font;
-$this_font_size:64;
-font-size: #{$this_font_size}px;
-// font-size: 54px;
-  font-weight: 400;
-letter-spacing: #{(60/1000)}em;
-line-height: (72/#{$this_font_size});
-color: $main_color;
-// color: $accent_color;
-@include max-screen($break_sp) {
-  font-size: 32px;
-}
-
+    font-family: $main_font; // font-family: $ja_font;
+    $this_font_size: 64;
+    font-size: #{$this_font_size}px; // font-size: 54px;
+    font-weight: 400;
+    letter-spacing: #{(60/1000)}em;
+    line-height: (72/#{$this_font_size});
+    color: $main_color; // color: $accent_color;
+    @include max-screen($break_sp) {
+      font-size: 32px;
+    }
   }
 
   &-txt {
     // font-family: $main_font;
     font-family: $ja_font;
     // $this_font_size:16;
-    $this_font_size:20;
+    $this_font_size: 20;
     font-size: #{$this_font_size}px;
     font-weight: 500;
     letter-spacing: 0;
@@ -40,7 +37,6 @@ color: $main_color;
     //@include max-screen($break_sp) {
     //  font-size: 16px;
     //}
-
   }
 
   &-news {
@@ -50,7 +46,6 @@ color: $main_color;
     border: 1px solid $main_color;
     width: (371/1440)*100%;
     // height: (110/800)*100%;
-
     &::before {
       content: "";
       border: 5px solid $main_color;
@@ -60,13 +55,14 @@ color: $main_color;
 
     &-item {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
 
-      &-txt{
+      &-txt {
         // font-family: $main_font;
         font-family: $ja_font;
-        $this_font_size:14;
+        $this_font_size: 14;
         // $this_font_size:20;
         font-size: #{$this_font_size}px;
         font-weight: 400;
@@ -77,34 +73,38 @@ color: $main_color;
         //@include max-screen($break_sp) {
         //  font-size: 16px;
         //}
-
       }
 
       &-content {
         padding: 16px 19px;
+        flex: 1;
+        @include max-screen($break_sp) {
+          padding: 10px;
+        }
 
-        time{
+        time {
+          display: block;
           font-family: $main_font;
           // font-family: $ja_font;
-          $this_font_size:12;
+          $this_font_size: 12;
           // $this_font_size:20;
           font-size: #{$this_font_size}px;
           font-weight: 400;
           letter-spacing: #{(60/1000)}em;
-          line-height: (60/#{$this_font_size});
+          line-height: 3;
           color: $main_color;
           // color: $accent_color;
           //@include max-screen($break_sp) {
           //  font-size: 16px;
           //}
-
         }
       }
     }
 
     &-btn {
       margin-left: auto;
-      padding: 29px;
+      // padding: 29px;
+      padding-right: 29px;
 
       img {
         vertical-align: middle;

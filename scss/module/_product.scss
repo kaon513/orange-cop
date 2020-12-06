@@ -1,22 +1,21 @@
 .product {
   background-color: $main_color;
 
-
   &-header {
     display: flex;
+      flex-wrap:wrap;
     justify-content: space-between;
     align-items: center;
   }
-
   // &-item{
   //   @extend .news-content-item;
   //   color: $accent_color;
   // }
-  &-ttl{
+  &-ttl {
     // color: $accent_color;
     font-family: $main_font;
     // font-family: $ja_font;
-    $this_font_size:36;
+    $this_font_size: 36;
     // $this_font_size:54;
     font-size: #{$this_font_size}px;
     font-weight: 400;
@@ -27,13 +26,12 @@
     @include max-screen($break_sp) {
       font-size: 24px;
     }
-
   }
 
-  &-txt{
+  &-txt {
     // font-family: $main_font;
     font-family: $ja_font;
-    $this_font_size:16;
+    $this_font_size: 16;
     // $this_font_size:20;
     font-size: #{$this_font_size}px;
     font-weight: 400;
@@ -44,27 +42,18 @@
     //@include max-screen($break_sp) {
     //  font-size: 16px;
     //}
-
   }
+
   &-item {
     cursor: pointer;
     margin-left: 37px;
     @include underline(true, false);
-    // color: $accent_color;
-font-family: $main_font;
-// font-family: $ja_font;
-$this_font_size:16;
-// $this_font_size:20;
-font-size: #{$this_font_size}px;
-font-weight: 400;
-letter-spacing: #{(60/1000)}em;
-// line-height: (60/#{$this_font_size});
-// color: $main_color;
-color: $accent_color;
-//@include max-screen($break_sp) {
-//  font-size: 16px;
-//}
-
+    font-family: $main_font;
+    $this_font_size: 16;
+    font-size: #{$this_font_size}px;
+    font-weight: 400;
+    letter-spacing: #{(60/1000)}em;
+    color: $accent_color;
 
     &::before {
       background: $accent_color;
@@ -96,14 +85,13 @@ color: $accent_color;
       }
     }
   }
+
   &-content {
     padding: 168px 0 183px;
     // @extend .menu-content;
-
     // &-wrapper {
     //   @extend .menu-content-wrapper;
     // }
-
     &-ttl {
       @extend .menu-content-ttl;
     }
@@ -117,7 +105,7 @@ color: $accent_color;
       // font-family: $main_font;
       // font-family: $ja_font;
       // $this_font_size:16;
-      $this_font_size:24;
+      $this_font_size: 24;
       font-size: #{$this_font_size}px;
       // font-weight: 400;
       // letter-spacing: #{(60/1000)}em;
@@ -127,8 +115,6 @@ color: $accent_color;
       //@include max-screen($break_sp) {
       //  font-size: 16px;
       //}
-
-
       // &:hover {
       //   img {
       //     transform: scale(1.1,1.1);
@@ -142,7 +128,6 @@ color: $accent_color;
       //     transform: translate(-50%,-50%);
       //   }
       // }
-
       // img {
       //   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
       // }
@@ -150,10 +135,8 @@ color: $accent_color;
       // a {
       //   @include underline(true);
       // }
-
       &-txt {
         @extend .menu-content-item-txt;
-
         // a {
         //   color: $sub_color;
         //   position: absolute;

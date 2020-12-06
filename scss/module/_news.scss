@@ -3,7 +3,10 @@
 margin-top: -600px;
 
   &-inner {
-    padding-top: 490px;
+    // padding-top: 490px;
+    // padding-top: 500px;
+    padding-top: 700px;
+    // padding-top: 700/1440vw;
   }
   //
   &-content {
@@ -11,10 +14,13 @@ margin-top: -600px;
     padding: 96px;
     position: relative;
 
+    @include max-screen($break_sp) {
+      padding: 96px 0;
+    }
+
     &-header {
-      display: -webkit-flex;
-      display: -ms-flex;
       display: flex;
+        flex-wrap:wrap;
       margin-bottom: 91px;
     }
 
@@ -36,9 +42,9 @@ margin-top: -600px;
     }
 
     &-list {
-      display: -webkit-flex;
-      display: -ms-flex;
+
       display: flex;
+        flex-wrap:wrap;
     }
 
     &-item {
@@ -115,10 +121,17 @@ margin-top: -600px;
 
     &:nth-child(2){
     padding-left: 39px;
+    @include max-screen($break_sp) {
+      padding-left: 0px;
+    }
     }
     &:nth-child(3){
     padding-left: 63.7px;
     padding-right: 63.7px;
+    @include max-screen($break_sp) {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
     }
 
     time{
@@ -178,12 +191,16 @@ margin-top: -600px;
       // @include border-bottom(true);
       @include underline(true, true);
       // color: $main_color;
+      @include max-screen($break_sp) {
+        padding: 0 0px 25px;
+      }
     }
   }
 }
 
 .tab-group{
   display: flex;
+    flex-wrap:wrap;
   justify-content: center;
   align-items: center;
   margin-left: auto;

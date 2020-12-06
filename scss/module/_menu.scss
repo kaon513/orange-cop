@@ -5,7 +5,8 @@
   position: fixed;
   z-index: 1;
   top: 0;
-  left: 0;
+  // left: 0;
+  right: 0;
   // width: 100vw;
   background-color: $main_color;
   padding-bottom: 109px;
@@ -16,6 +17,7 @@
 
   &-header {
     display: flex;
+      flex-wrap:wrap;
     align-items: center;
     justify-content: center;
     height: 128px;
@@ -30,10 +32,15 @@
 
     &-wrapper {
       display: flex;
+        flex-wrap:wrap;
       justify-content: center;
       align-items: center;
       padding: 0 80px;
       height: 100%;
+
+      @include min-screen($break_pc) {
+          height: 799px;
+      }
     }
 
     &-ttl {
@@ -57,6 +64,7 @@
 
     &-list {
       display: flex;
+        flex-wrap:wrap;
       justify-content: space-between;
       align-items: center;
     }
@@ -75,9 +83,9 @@ letter-spacing: #{(60/1000)}em;
 line-height: (22/#{$this_font_size});
 color: $sub_color;
 // color: $accent_color;
-//@include max-screen($break_sp) {
-//  font-size: 16px;
-//}
+@include max-screen($break_sp) {
+ font-size: 12px;
+}
 
 
       &:hover{
@@ -148,4 +156,5 @@ color: $sub_color;
   // display: block;
   opacity: 1;
   width: 100%;
+  max-width: 1440px;
 }

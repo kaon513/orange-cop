@@ -179,13 +179,20 @@
     width: 0;
     background: $main_color;
     transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+
+    @include max-screen($break_sp) {
+      bottom: -5px;
+    }
   }
   @if($hover) {
     &:hover {
       color: #d97568;
-      &::before {
-        width: 100%;
-        left: 0;
+      @if($arrow) {}
+      @else{
+        &::before {
+          width: 100%;
+          left: 0;
+        }
       }
     }
   }
@@ -212,6 +219,9 @@
       // z-index: -1;
       // transition: all 0.4s;/*アニメーション速度*/
       // animation: liner 1s cubic-bezier(0.19, 1, 0.22, 1) infinite;
+      @include max-screen($break_sp) {
+        bottom: -5px;
+      }
     }
 
     &::before {

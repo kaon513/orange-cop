@@ -72,7 +72,7 @@
         <div class="menu-content-wrapper">
           <div class="menu-content">
             <h3 class="menu-content-ttl">製品・サービスへのお問い合わせ</h3>
-            <!-- <div class="menu-content-inner"> -->
+
               <ul class="menu-content-list">
                 <li class="menu-content-item">
                   <img src="./img/product-1.png" alt="product">
@@ -87,7 +87,6 @@
                   <p class="menu-content-item-txt"><a href="#">Hadson</a></p>
                 </li>
               </ul>
-            <!-- </div> -->
 
           </div>
           <ul class="menu-list">
@@ -184,10 +183,8 @@
             <p class="passion-txt">この来るべき未来のために、私たちは、テレビ・コンテンツに関わる「情報」を整理・統合（データベース化）して、３つの新しい価値を創造しようと考えました。それが私たちのミッションです。</p>
             <a href="#">View details</a>
           </div>
-          <div class="passion-img rellax " >
-            <!-- <div data-depth="0.80"> -->
+          <div class="passion-img rellax" data-rellax-percentage="0.5" data-rellax-zindex="-10">
             <img src="./img/passion.png" alt="passion">
-            <!-- </div> -->
           </div>
         </div>
       </div>
@@ -244,8 +241,6 @@
             <div class="tab-panel">
               <div class="news-content-header">
                 <h3 class="news-content-ttl">NEWS/IR</h3>
-
-                <!--タブ-->
                 <ul class="tab-group news-content-list">
                   <li class="tab tab-1 news-content-item is-active">Press</li>
                   <li class="tab tab-2 news-content-item">News</li>
@@ -254,8 +249,6 @@
                   <li class="tab tab-5 news-content-item all-list">All&nbsplist</li>
                 </ul>
               </div>
-
-              <!--タブを切り替えて表示するコンテンツ-->
               <div class="panel-group">
                 <div class="panel tab-1 is-show">
                   <table class="news-tbl">
@@ -379,19 +372,21 @@
 
   <!-- footer -->
   <footer class="footer">
+    <div class="container">
     <div class="footer-content">
       <p class="footer-company">
         <span>株式会社オレンジコーポレーション</span>
         <span>東京都新宿区新宿1-55-1 新宿ビル</span>
       </p>
       <ul class="footer-list">
-        <li class="footer-item"></li>
-        <li class="footer-item"></li>
-        <li class="footer-item"></li>
-        <li class="footer-item"></li>
-        <li class="footer-item"></li>
-        <li class="footer-item"></li>
+        <li class="footer-item"><a href="#">Services</a> </li>
+        <li class="footer-item"><a href="#">Passion</a></li>
+        <li class="footer-item"><a href="#">NEWS/IR </a></li>
+        <li class="footer-item"><a href="#">Recruit</a></li>
+        <li class="footer-item"><a href="#">Company</a></li>
+        <li class="footer-item"><a href="#">Contact</a></li>
       </ul>
+    </div>
     </div>
   </footer><!-- /footer -->
   <script type="text/javascript" src="js/script.js"></script>
@@ -415,7 +410,8 @@
   </script>
   <script src="js/rellax.min.js" charset="utf-8"></script>
   <script charset="utf-8">
-    var rellax = new Rellax('.rellax');
+    const rellax = new Rellax('.rellax');
+
   </script>
 </body>
 

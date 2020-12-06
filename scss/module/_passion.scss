@@ -1,19 +1,35 @@
-.passion{
+.passion {
+  padding-bottom: 155px;
+  // margin-bottom: 155px;
 
-    padding-bottom: 100px;
-
-  &-inner{
-    display: flex;
+  .container {
+    // max-width: #{$max_width}px;
+    // margin: 0 auto;
+    padding-right: 0;
+    // padding-left: percentage($container_margin_rl_per);
+    @include max-screen($break_sp) {
+      padding-right: 0;
+      // padding-left: #{$container_margin_rl}px;
+    }
   }
-  &-content{
-    width: 50%;
 
-    a{
-      padding: 0px 90px 25px;
+  &-inner {
+    display: flex;
+      flex-wrap:wrap;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  &-content {
+    width: 44%;
+    padding-right: 112px;
+
+    a {
+      padding: 0 90px 25px;
       font-family: $main_font;
       // font-family: $ja_font;
       // $this_font_size:16;
-      $this_font_size:20;
+      $this_font_size: 20;
       font-size: #{$this_font_size}px;
       font-weight: 400;
       letter-spacing: #{(60/1000)}em;
@@ -23,47 +39,50 @@
       //@include max-screen($break_sp) {
       //  font-size: 16px;
       //}
-
-@include underline(true, true);
+      @include underline(true, true);
     }
   }
-  &-img{
+
+  &-img {
     // position: absolute;
-    width: 50%;
+    width: 56%;
   }
-  &-ttl{
+
+  &-ttl {
     font-family: $main_font;
     // font-family: $ja_font;
     // $this_font_size:36;
-    $this_font_size:54;
+    $this_font_size: 54;
     font-size: #{$this_font_size}px;
     font-weight: 400;
     letter-spacing: #{(60/1000)}em;
     line-height: (60/#{$this_font_size});
     color: $main_color;
     // color: $accent_color;
+    margin-bottom: 0.5em;
     @include max-screen($break_sp) {
       font-size: 36px;
     }
 
+    &-txt {
+      margin-bottom: 0.5em;
+    }
   }
-  &-txt{
+
+  &-txt {
     margin-bottom: 2em;
-
-      // font-family: $main_font;
-      font-family: $ja_font;
-      $this_font_size:16;
-      // $this_font_size:20;
-      font-size: #{$this_font_size}px;
-      font-weight: 400;
-      letter-spacing: 0;
-      line-height: (32/#{$this_font_size});
-      color: $main_color;
-      // color: $accent_color;
-      //@include max-screen($break_sp) {
-      //  font-size: 16px;
-      //}
-
-
+    // font-family: $main_font;
+    font-family: $ja_font;
+    $this_font_size: 16;
+    // $this_font_size:20;
+    font-size: #{$this_font_size}px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: (32/#{$this_font_size});
+    color: $main_color;
+    // color: $accent_color;
+    //@include max-screen($break_sp) {
+    //  font-size: 16px;
+    //}
   }
 }

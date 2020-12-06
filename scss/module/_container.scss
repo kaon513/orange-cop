@@ -1,11 +1,16 @@
 .container {
-  max-width: $max_width;
+  max-width: #{$max_width}px;
   margin: 0 auto;
-  padding-right: (160/1140)*100%;
-  padding-left: (160/1140)*100%;
+  padding-right: percentage($container_margin_rl_per);
+  padding-left: percentage($container_margin_rl_per);
 
   @include max-screen($break_sp) {
-    padding-right: 160px;
-    padding-left: 160px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  @include min-screen($break_pc) {
+    padding-right: #{$container_margin_rl}px;
+    padding-left: #{$container_margin_rl}px;
   }
 }

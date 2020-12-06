@@ -1,3 +1,61 @@
 .footer{
+  padding: 130px 0 95.5px;
   background-color: $main_color;
+  font-family: $main_font;
+  // font-family: $ja_font;
+  $this_font_size:16;
+  // $this_font_size:20;
+  font-size: #{$this_font_size}px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: (32/#{$this_font_size});
+  // color: $main_color;
+  color: $accent_color;
+  //@include max-screen($break_sp) {
+  //  font-size: 16px;
+  //}
+&-content{
+  display: flex;
+    flex-wrap:wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+&-company{
+  span{
+    &:after {
+     content: "\A";
+     white-space: pre;
+    }
+  }
+}
+&-list{
+  padding-top: 45px;
+  display: flex;
+    flex-wrap:wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $accent_color;
+}
+
+&-item{
+  cursor: pointer;
+  margin-left: 52px;
+  @include underline(true, false);
+
+  @include max-screen($break_sp) {
+    margin-left: 0px;
+  }
+
+  &::before {
+    background: $accent_color;
+  }
+
+  &:first-child{
+  margin-left: 0;
+  }
+
+  a{
+    color: $accent_color;
+  }
+}
 }

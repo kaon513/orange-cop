@@ -1,7 +1,7 @@
 .concept {
   text-align: left;
   color: $main_color;
-  padding: 173px 0 155px;
+  padding: 173px 0 235px;
 
 
   &-ttl {
@@ -33,6 +33,9 @@
       transform: translateX(-103px);
       height: 379px;
       width: 352px;
+      @include max-screen($break_sp) {
+        display: none;
+      }
     }
   }
 

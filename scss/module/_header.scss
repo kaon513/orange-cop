@@ -7,6 +7,7 @@
   position: fixed;
   z-index: 100;
   display: flex;
+    flex-wrap:wrap;
   align-items: center;
   // justify-content: center;
   justify-content: space-between;
@@ -19,6 +20,13 @@
     height: 35px;
     margin-right: auto;
     margin-left: 54px;
+
+    @include max-screen($break_sp) {
+      margin-left: 10px;
+      img{
+        width: 50%;
+      }
+    }
   }
 
   &-nav {
@@ -26,6 +34,7 @@
 
     &-list {
       display: flex;
+        flex-wrap:wrap;
       align-items: center;
       justify-content: center;
       height: 65px;
@@ -43,9 +52,13 @@
       line-height: (20/#{$this_font_size});
       color: $main_color;
       // color: $accent_color;
-      //@include max-screen($break_sp) {
-      //  font-size: 16px;
-      //}
+      @include max-screen($break_sp) {
+       margin-left: 15px; //←％指定すると折り返す
+       display: none;
+       &:last-child{
+         display: block;
+       }
+      }
 
 
       a {
