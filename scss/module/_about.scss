@@ -31,12 +31,9 @@
   $wrap_width: 1440 - 320;
   $this_width: 32 / #{$wrap_width};
   $this_magin_left: #{$this_width} * 100%;
-  // #{$this_magin_left}
   &-item {
-    // width: 31%;
     width: 29%;
     margin-left: 2.8%;
-    // @include border_bottom;
     @include underline;
 
     &:first-child {
