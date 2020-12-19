@@ -186,7 +186,7 @@
   }
   @if($hover) {
     &:hover {
-      color: #d97568;
+      // color: #d97568;
       @if($arrow) {}
       @else{
         &::before {
@@ -258,8 +258,8 @@
       // background: $main_color;/*下線の色*/
       // z-index: -1;
       // transition: all 0.4s;/*アニメーション速度*/
-      animation: liner 3s cubic-bezier(1.000, 0.000, 0.000, 1.000) infinite;
-      animation-delay: -.5s;
+      // animation: liner 3s cubic-bezier(1.000, 0.000, 0.000, 1.000) forwards;
+      // animation-delay: -.5s;
       // transition: all 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
     }
   }
